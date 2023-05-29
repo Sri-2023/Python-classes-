@@ -1,0 +1,288 @@
+Here is the code from Python classes from Navin_reddy. This is from 
+
+class apartment:
+    def rooms(self):
+        print("this is my bedroom")
+
+floor1 = apartment()
+floor2 = apartment ()
+floor3 = apartment()
+
+floor1.rooms()
+floor2.rooms()
+floor3.rooms()
+
+print("this is the end of this session")
+
+
+# this is the example of how to use the init
+class apartment:
+
+    def __init__(self,building, skyscrapers):
+        self.building = building
+        self. skyscrapers = skyscrapers
+
+    def rooms(self):
+        print("this is my bedroom", self.building, self.skyscrapers)
+
+floor1 = apartment("namaste","amabani")
+floor2 = apartment ("sri 28","amma 21")
+floor3 = apartment("gowda","family")
+
+floor1.rooms()
+floor2.rooms()
+floor3.rooms()
+
+
+# this is another example to create multiple objects under one class
+
+class agri:
+
+    def __init__(self, farms, crops):
+        self.farms = farms
+        self.crops = crops
+
+    def farm(self):
+        print("this is my", self.farms, self. crops)
+
+village1 = agri ("cattle 21","dairy 38")
+village2 = agri ("sheep 23", "goat23")
+
+village1.farm()
+village2.farm()
+
+
+#to use the concept of constructor and self
+
+class family:
+
+    def __init__(self,name, age):
+        self.name = "sri"
+        self.age = 23
+
+    def update(self):
+        self.age = 67
+
+    def compare(self,other):
+        if self.age == other.age:
+            return True
+        else:
+            return False
+
+A = family("kjaNS","akjhfbv")
+B = family("l;kvn","adkjfb")
+
+A.name = "Gouramma"
+B.age = 45
+
+if A.compare(A):
+    print("they are same")
+
+print(A.name)
+print(A.age)
+print(B.age)
+
+# types of variables
+
+class car:
+    wheels = 4 # this is called classic or static variable thats why it is outside the init function
+
+    def __init__(self,name, milage):
+        self.name = "BMW","BENZ"
+        self.milage = 75
+
+c1 = car("afn",56)
+c2 = car("ljenf",78)
+
+c1.name = "AUDi"  # this is the way to change the name of the instance variable
+c1.milage = 96
+
+car.wheels = 6 # this is how we change the static or classic variable
+
+print(c1.name, c1.milage, c1.wheels)
+print(c2.name, c2.milage, c2.wheels)
+
+# we will discuss about the class, instance and static method
+
+class  student:
+
+    def __init__(self,m1,m2,m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+
+    def avg(self):    # this is a instance method
+        return(self.m1 + self.m2 +self.m2)/3
+
+sri = student(23,34,56)
+yerri = student (56,78,89)
+
+print(sri.avg())
+print(yerri.avg())
+
+#this is the class
+
+class computer:
+
+    def __init__(self):
+        self.name = "srikanth"
+        self.age = 24
+
+    def update(self):
+        self.age= 96
+
+    def compare(self,other):
+        if self.age == other.age:
+            return True
+        else:
+            return False
+
+ID1= computer()
+ID2 = computer()
+
+ID1.update ()
+
+ID1.name = "Yerriswamy"
+ID2. age = 45
+
+if ID1.compare (ID2):
+    print("they are same")
+
+print(id(ID1))
+print(id(ID2))
+
+print(ID1.name,ID1.age)
+print(ID2.age, ID2.name)
+
+
+# what are instance and class variables
+
+class car:
+    wheels = 5 # this is class or stati variable
+
+    def __init__(self):
+        self.company = "BMW" # these are instance variables
+        self.milage = "2000 mph"
+
+model1 = car()
+model2 = car()
+
+if model1.wheels==6:
+    print ("this is expensive car")
+
+model1.company ="Audi" # this is how to change the variables
+model1.wheels =6
+
+print(model1.company, model2.milage,model1.wheels)
+print(model2.company, model2.milage,model2.wheels)
+
+# this is what are the different types of methods
+
+# we have three types: instance, class and static methods
+
+class student:
+    university = "cornell"
+
+    def __init__(self,m1,m2,m3):
+        self.m1 = m1
+        self.m2= m2
+        self.m3 = m3
+
+    def average(self): # this "average" called instant method, this also has two types: accessor and mutators
+        return(self.m1 + self.m2 + self.m3)/3
+
+    @classmethod # this is a decorator, it is used to define the class method
+    def info(cls):  # we used cls because, we are working with class or static variable
+        return cls. university
+
+
+Agri1 = student(36,89,69)
+Agri2 = student(86,89,86)
+
+Agri1.m2 = 1068 # this is called
+
+print(Agri1.average())
+print(Agri2.average())
+
+print(student.info())
+
+# we are exploring how to define a class inside the class
+
+class student:
+
+    def __init__(self, Name, ID, place):
+        self.Name = Name
+        self.ID =ID
+        self.place = place
+
+    def show(self):
+        print(self.Name, self.ID, self.place)
+s1 = student("srikanth","5343","Ballari")
+
+s1.show() # this code to illustrate all the things from s1
+
+# how to write a clas in side the class and al;so about inheritance. This  example is called  single-leve inheritance because i used only one  class inside the main class
+class fertilizer: # this is a parent or super class
+
+    def Urea(self):
+        print("this is nitrogen fertilizer")
+
+    def Phosphours(self):
+        print("this is yellow fertilizer")
+
+    def Potassium(self):
+        print("this is a blue fertilizer")
+
+class Manure(fertilizer): # this is called inheritance, where we are adding the methods of fertilizer toe the manure class. This calls is called child or sub class
+
+    def cowdung(self):
+        print("this is a good nutrients for all the fertilizers")
+
+    def plant_waste(self):
+        print("this is also alternative option for more nutrients from the plant waste")
+
+Inorganic_fertilizer = fertilizer ()
+Organic_fertilizer = Manure()
+
+Inorganic_fertilizer.Urea()
+Inorganic_fertilizer.Potassium()
+Inorganic_fertilizer.Phosphours()
+
+Organic_fertilizer
+Organic_fertilizer.plant_waste()
+
+# here is an example of multi-level inheritance (using more than two classes)
+
+class agriculture:
+    def sowing(self):
+        print("planting seeds ")
+    def water(self):
+        print("through irrigation")
+    def nutrients(self):
+        print("supply through fertilizer + manures")
+
+class Job(agriculture):
+
+    def IT(self):
+        print("its writing code")
+    def professor(self):
+        print("its teaching job")
+    def bank(self):
+        print("its hectic job")
+
+class politican(Job):
+
+    def freemoney(self):
+        print("its a position")
+    def ruling(self):
+        print("its a high-class work")
+
+A1 = agriculture()
+J1 = Job()
+P1 = politican()
+
+A1.sowing()
+J1.sowing(), IT())
+P1.freemoney()
+
+
